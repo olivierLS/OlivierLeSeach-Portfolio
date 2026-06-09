@@ -1,60 +1,104 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio — Olivier Le SEAC'H</title>
-  <meta name="description" content="Portfolio d'Olivier Le SEAC'H, étudiant BTS SIO — Projets, CV et contact.">
+  <title>Projets — Portfolio Olivier Le SEAC'H</title>
+  <meta name="description" content="Projets réalisés par Olivier Le SEAC'H, étudiant BTS SIO — OffiTouch, déploiement DSDEN et plus.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/img/Logo.ico" type="image/x-icon">
 </head>
 <body>
-  <header id="site-header"></header>
-  <main class="container fade-in">
 
-<section>
-  <h1 class="section-title">Mes projets</h1>
+  <header id="site-header" role="banner"></header>
 
-  <article id="offitouch" class="project">
-    <h2>OffiTouch — Pharmagest</h2>
-    <div class="project__layout">
-      <div class="project__media ph"></div>
-      <div class="project__content">
-        <p><strong>Contexte :</strong> moderniser la vitrine des pharmacies via un écran tactile HD (46–55"), piloté par un mini-PC Lenovo et un logiciel dédié.</p>
-        <ul class="list">
-          <li>Synchronisation avec le logiciel de gestion <strong>LGPI</strong>.</li>
-          <li>Possibilité d'imprimer des tickets (Epson TM-30 : bons de réduction, codes-barres).</li>
-          <li>Formules : <em>Screen</em>, <em>Wall</em>, <em>Stand</em> selon les besoins.</li>
-          <li>Base <strong>MySQL</strong>, outils Microsoft intégrés, manager à distance.</li>
-          <li>Installation maîtrisée, démarrage auto, maintenance incluse.</li>
-        </ul>
-        <p><strong>Impact :</strong> expérience client plus claire et interactive, simplification des opérations, intégration sans chantier lourd.</p>
-      </div>
-    </div>
-  </article>
+  <main class="container fade-in" id="main-content">
 
-  <article id="dsden" class="project">
-    <h2>Déploiement & standardisation des postes — DSDEN du Morbihan</h2>
-    <div class="project__layout">
-      <div class="project__media" style="background-image:url('assets/img/dsden-reservation.png');background-size:cover;background-position:center;"></div>
-      <div class="project__content">
-        <p><strong>Objectif :</strong> homogénéiser et sécuriser un parc hétérogène via un processus industrialisé.</p>
-        <ul class="list">
-          <li>Outils : <strong>MDT</strong>, <strong>WAPT</strong>, <strong>PowerShell</strong>, Triskell, Rocket.Chat.</li>
-          <li>Phases : préparation → validation → déploiement massif → clôture.</li>
-          <li>Résultats : délais réduits, baisse des pannes, satisfaction accrue.</li>
-        </ul>
-        <p><strong>Valeur :</strong> modèle reproductible pour d'autres établissements, traçabilité complète et documentation détaillée.</p>
-      </div>
-    </div>
-  </article>
-</section>
+    <section aria-labelledby="titre-projets">
+      <h1 class="section-title" id="titre-projets">Mes projets</h1>
+
+      <!-- Projet 1 : OffiTouch -->
+      <article id="offitouch" class="project" aria-labelledby="titre-offitouch">
+        <h2 id="titre-offitouch">OffiTouch — Pharmagest</h2>
+        <div class="project__layout">
+
+          <div class="project__media ph" role="img" aria-label="Illustration du projet OffiTouch"></div>
+
+          <div class="project__content">
+            <p>
+              <strong>Contexte&nbsp;:</strong> moderniser la vitrine des pharmacies
+              via un écran tactile HD (46–55&nbsp;pouces), piloté par un mini-PC Lenovo
+              et un logiciel dédié.
+            </p>
+            <ul class="list">
+              <li>Synchronisation avec le logiciel de gestion <strong>LGPI</strong>.</li>
+              <li>
+                Possibilité d'imprimer des tickets
+                (Epson TM-30&nbsp;: bons de réduction, codes-barres).
+              </li>
+              <li>
+                Formules&nbsp;: <em>Screen</em>, <em>Wall</em>, <em>Stand</em>
+                selon les besoins.
+              </li>
+              <li>
+                Base <strong>MySQL</strong>, outils Microsoft intégrés,
+                administration à distance.
+              </li>
+              <li>Installation maîtrisée, démarrage automatique, maintenance incluse.</li>
+            </ul>
+            <p>
+              <strong>Impact&nbsp;:</strong> expérience client plus claire et interactive,
+              simplification des opérations, intégration sans travaux lourds.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Projet 2 : DSDEN -->
+      <article id="dsden" class="project" aria-labelledby="titre-dsden">
+        <h2 id="titre-dsden">Déploiement &amp; standardisation des postes — DSDEN du Morbihan</h2>
+        <div class="project__layout">
+
+          <div
+            class="project__media"
+            role="img"
+            aria-label="Capture d'écran du système de réservation DSDEN"
+            style="background-image: url('assets/img/dsden-reservation.png'); background-size: cover; background-position: center;"
+          ></div>
+
+          <div class="project__content">
+            <p>
+              <strong>Objectif&nbsp;:</strong> homogénéiser et sécuriser un parc informatique
+              hétérogène via un processus industrialisé.
+            </p>
+            <ul class="list">
+              <li>
+                Outils&nbsp;: <strong>MDT</strong>, <strong>WAPT</strong>,
+                <strong>PowerShell</strong>, Triskell, Rocket.Chat.
+              </li>
+              <li>
+                Phases&nbsp;: préparation → validation → déploiement massif → clôture.
+              </li>
+              <li>Résultats&nbsp;: délais réduits, baisse des pannes, satisfaction accrue.</li>
+            </ul>
+            <p>
+              <strong>Valeur&nbsp;:</strong> modèle reproductible pour d'autres établissements,
+              traçabilité complète et documentation détaillée.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
 
   </main>
-  <footer id="site-footer" class="fade-in"></footer>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/footer.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
-
