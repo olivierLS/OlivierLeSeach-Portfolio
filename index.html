@@ -19,61 +19,88 @@
 </head>
 <body>
 
+  <!-- Élément décoratif en arrière-plan (Optionnel, ajoute de la profondeur) -->
+  <div class="bg-shape-glow" aria-hidden="true"></div>
+
   <header id="site-header" role="banner"></header>
 
   <main class="container fade-in" id="main-content">
 
+    <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-titre">
       <div class="hero__text">
+        <p class="hero__greeting">Bonjour, je suis</p>
         <h1 class="hero__title" id="hero-titre">Olivier Le SEAC'H</h1>
         <p class="hero__subtitle">
-          Étudiant BTS SIO — systèmes &amp; réseaux, déploiement de postes, solutions numériques.
+          Étudiant en <strong>BTS SIO</strong>, passionné par l'administration de systèmes &amp; réseaux, le déploiement automatisé et les solutions IT fiables.
         </p>
         <div class="hero__cta">
-          <a class="btn" href="projets.html">Découvrir mes projets</a>
-          <a class="btn btn--ghost" href="contact.html">Me contacter</a>
+          <a class="btn" href="projets.html">
+            Découvrir mes projets
+            <!-- Icône Flèche SVG -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="contact.html">
+            Me contacter
+          </a>
         </div>
       </div>
 
       <aside class="hero__shape hero__highlight" aria-labelledby="highlight-titre">
-        <p class="hero__highlight-kicker">Profil technique</p>
-        <h2 class="hero__highlight-title" id="highlight-titre">Un technicien SI orienté terrain</h2>
+        <!-- Icône décorative dans l'encart -->
+        <svg class="hero__highlight-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        
+        <p class="hero__highlight-kicker">Vision technique</p>
+        <h2 class="hero__highlight-title" id="highlight-titre">L'IT orienté terrain</h2>
         <p class="hero__highlight-text">
-          Étudiant en BTS SIO (SISR), j'aborde les environnements IT de façon concrète&nbsp;:
-          déploiement de postes, administration systèmes/réseaux et support utilisateur.
+          J'aborde les environnements informatiques de façon concrète&nbsp;:
+          déploiement de postes, administration réseaux et support réactif.
         </p>
-        <p class="hero__highlight-text">
-          Je mets l'accent sur des solutions fiables, documentées et faciles à maintenir.
+        <p class="hero__highlight-text" style="margin-top: 8px;">
+          <strong>Mon objectif&nbsp;:</strong> des solutions sécurisées, documentées et faciles à maintenir.
         </p>
       </aside>
     </section>
 
+    <!-- Compétences clés -->
     <section class="home-highlights" aria-labelledby="titre-competences">
-      <h2 class="section-title" id="titre-competences">Compétences clés</h2>
-      <ul class="tags" aria-label="Liste des compétences clés">
-        <li>Windows / Linux</li>
+      <div class="section-header">
+        <h2 class="section-title" id="titre-competences">Compétences clés</h2>
+        <a href="apropos.html" class="section-link">Voir mon profil complet &rarr;</a>
+      </div>
+      <ul class="tags tags--large" aria-label="Liste des compétences clés">
+        <li>Windows Server / Linux</li>
         <li>Déploiement (MDT, WAPT)</li>
-        <li>PowerShell</li>
-        <li>Matériel &amp; maintenance</li>
-        <li>Réseaux</li>
-        <li>MySQL</li>
+        <li>Scripting PowerShell</li>
+        <li>Réseaux (VLAN, Routage)</li>
+        <li>Maintenance Matérielle</li>
+        <li>Bases de données (MySQL)</li>
       </ul>
     </section>
 
+    <!-- Projets récents -->
     <section class="home-projects" aria-labelledby="titre-projets">
-      <h2 class="section-title" id="titre-projets">Projets récents</h2>
+      <div class="section-header">
+        <h2 class="section-title" id="titre-projets">Projets récents</h2>
+      </div>
       <div class="cards">
 
         <article class="card" aria-labelledby="card-titre-offitouch">
           <div class="card__img ph" role="img" aria-label="Illustration du projet OffiTouch"></div>
           <div class="card__body">
+            <!-- NOUVEAU : Badges technologiques dans la carte -->
+            <ul class="card__tags" aria-label="Technologies utilisées">
+              <li>Maintenance</li>
+              <li>Système interactif</li>
+            </ul>
+            
             <h3 class="card__title" id="card-titre-offitouch">OffiTouch — Pharmagest</h3>
             <p class="card__desc">
-              Système interactif de vitrine connectée, synchronisé avec LGPI,
-              pour moderniser l'expérience client en officine.
+              Installation de systèmes interactifs en vitrine connectée, synchronisés avec LGPI pour moderniser l'expérience client en officine.
             </p>
             <a href="projets.html#offitouch" class="card__link" aria-label="Voir les détails du projet OffiTouch">
-              Voir le projet <span aria-hidden="true">&rarr;</span>
+              Lire l'étude de cas 
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </article>
@@ -86,13 +113,19 @@
             style="background-image: url('assets/img/dsden-reservation.png'); background-size: cover; background-position: center;"
           ></div>
           <div class="card__body">
+            <ul class="card__tags" aria-label="Technologies utilisées">
+              <li>MDT</li>
+              <li>WAPT</li>
+              <li>Windows</li>
+            </ul>
+
             <h3 class="card__title" id="card-titre-dsden">Standardisation — DSDEN 56</h3>
             <p class="card__desc">
-              Déploiement automatisé et sécurisé de postes via MDT &amp; WAPT.
-              Gains de temps et homogénéité du parc informatique.
+              Déploiement automatisé et sécurisé de postes informatiques. Gains de temps considérables et homogénéité totale du parc.
             </p>
             <a href="projets.html#dsden" class="card__link" aria-label="Voir les détails du projet DSDEN 56">
-              Voir le projet <span aria-hidden="true">&rarr;</span>
+              Lire l'étude de cas 
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </article>
