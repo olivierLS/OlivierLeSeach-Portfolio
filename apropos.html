@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -9,80 +9,146 @@
   <link rel="icon" href="assets/img/Logo.ico" type="image/x-icon">
 </head>
 <body>
-  <header id="site-header"></header>
-  <main class="container fade-in">
 
-<section class="about">
-  <h1 class="section-title">À propos</h1>
-  <div class="about__grid">
-    <div>
-      <h2>Profil</h2>
-      <div class="profile-layout">
-        <div class="profile-text">
-          <p>Technicien système informatique, autonome et curieux. Étudiant en <strong>BTS SIO</strong> à l'AFTEC Vannes, intéressé par les systèmes, réseaux et le déploiement automatisé.</p>
-          <ul class="bullets">
-            <li>Âge : 25 ans</li>
-            <li>Mobilité : Morbihan — Permis B, véhicule personnel</li>
-            <li>Mode de travail : télétravail ou présentiel</li>
+  <header id="site-header" role="banner"></header>
+
+  <main class="container fade-in" id="main-content">
+
+    <section class="about" aria-labelledby="titre-apropos">
+      <h1 class="section-title" id="titre-apropos">À propos</h1>
+
+      <div class="about__grid">
+
+        <!-- Profil -->
+        <div class="about__card">
+          <h2>Profil</h2>
+          <div class="profile-layout">
+            <div class="profile-text">
+              <p>
+                Technicien systèmes informatiques, autonome et curieux.
+                Étudiant en <strong>BTS SIO</strong> à l'AFTEC Vannes,
+                intéressé par les systèmes, les réseaux et le déploiement automatisé.
+              </p>
+              <address>
+                <ul class="bullets" aria-label="Informations personnelles">
+                  <li>Âge&nbsp;: 25 ans</li>
+                  <li>Mobilité&nbsp;: Morbihan — Permis B, véhicule personnel</li>
+                  <li>Mode de travail&nbsp;: télétravail ou présentiel</li>
+                </ul>
+              </address>
+            </div>
+            <figure class="profile-photo">
+              <img
+                src="assets/img/profile-cv.jpg"
+                alt="Portrait d'Olivier Le SEAC'H"
+                width="200"
+                height="200"
+                loading="lazy"
+              >
+              <figcaption class="sr-only">Olivier Le SEAC'H</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Compétences -->
+        <div class="about__card">
+          <h2>Compétences</h2>
+          <ul class="tags" aria-label="Compétences techniques">
+            <li>Windows / Linux</li>
+            <li>MDT / WAPT</li>
+            <li>PowerShell</li>
+            <li>MySQL</li>
+            <li>Maintenance matériel &amp; logiciel</li>
+            <li>Réseaux &amp; sauvegardes</li>
+            <li>Suite Office</li>
+            <li>EBP</li>
+          </ul>
+
+          <h3>Langues</h3>
+          <ul class="tags" aria-label="Langues parlées">
+            <li>Anglais B2</li>
+            <li>Espagnol A2</li>
           </ul>
         </div>
-        <figure class="profile-photo">
-          <img src="assets/img/profile-cv.jpg" alt="Portrait de Olivier Le SEAC'H">
-        </figure>
-      </div>
-    </div>
-    <div>
-      <h2>Compétences</h2>
-      <ul class="tags">
-        <li>Windows / Linux</li>
-        <li>MDT / WAPT</li>
-        <li>PowerShell</li>
-        <li>MySQL</li>
-        <li>Maintenance matériel & logiciel</li>
-        <li>Réseaux & sauvegardes</li>
-        <li>Suite Office</li>
-        <li>EBP</li>
-      </ul>
-      <h3>Langues</h3>
-      <ul class="tags">
-        <li>Anglais B2</li>
-        <li>Espagnol A2</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Diplômes & Formations</h2>
-      <ul class="timeline">
-        <li><strong>BTS SIO</strong> — AFTEC Vannes (2024 – en cours)</li>
-        <li><strong>BTS GPME</strong> — AFTEC Vannes (2021)</li>
-        <li><strong>Bac Pro Systèmes Numériques</strong> — option ARED (2019)</li>
-      </ul>
 
-      <h2>Expériences</h2>
-      <ul class="timeline">
-        <li><strong>DSDEN</strong> — Tech. Systèmes (juil. 2025) : déploiement postes, transferts de données.</li>
-        <li><strong>Pharmagest</strong> — Tech. maintenance (2018–2019) : préparation matériel officines.</li>
-        <li><strong>Ordinov</strong> — Tech. maintenance (2017–2018) : installations particuliers/TPE.</li>
-        <li><strong>Pôle Emploi</strong> — Service civique (2022) : accompagnement aux services numériques.</li>
-        <li><strong>Formateur bénévole</strong> (depuis 2022) : cours d'informatique à domicile.</li>
-      </ul>
-    </div>
-    <div>
-      <h2>Atouts & Intérêts</h2>
-      <ul class="bullets">
-        <li>Autonomie, communication, curiosité</li>
-        <li>Informatique, culture générale (histoire, géographie, littérature)</li>
-        <li>Sports : natation, voile</li>
-      </ul>
-      <p><a class="btn btn--ghost" href="https://www.linkedin.com/in/olivier-le-seac-h-201aa5139/" target="_blank" rel="noopener">Voir mon LinkedIn</a></p>
-    </div>
-  </div>
-</section>
+        <!-- Formations & Expériences -->
+        <div class="about__card">
+          <h2>Diplômes &amp; Formations</h2>
+          <ul class="timeline" aria-label="Parcours de formation">
+            <li>
+              <strong>BTS SIO</strong> — AFTEC Vannes
+              (<time datetime="2024">2024</time> – en cours)
+            </li>
+            <li>
+              <strong>BTS GPME</strong> — AFTEC Vannes
+              (<time datetime="2021">2021</time>)
+            </li>
+            <li>
+              <strong>Bac Pro Systèmes Numériques</strong> — option ARED
+              (<time datetime="2019">2019</time>)
+            </li>
+          </ul>
+
+          <h2>Expériences</h2>
+          <ul class="timeline" aria-label="Expériences professionnelles">
+            <li>
+              <strong>DSDEN</strong> — Technicien systèmes
+              (<time datetime="2025-07">juil. 2025</time>)&nbsp;:
+              déploiement de postes, transferts de données.
+            </li>
+            <li>
+              <strong>Pharmagest</strong> — Technicien maintenance
+              (<time datetime="2018">2018</time>–<time datetime="2019">2019</time>)&nbsp;:
+              préparation du matériel en officines.
+            </li>
+            <li>
+              <strong>Ordinov</strong> — Technicien maintenance
+              (<time datetime="2017">2017</time>–<time datetime="2018">2018</time>)&nbsp;:
+              installations chez des particuliers et en TPE.
+            </li>
+            <li>
+              <strong>Pôle Emploi</strong> — Service civique
+              (<time datetime="2022">2022</time>)&nbsp;:
+              accompagnement aux services numériques.
+            </li>
+            <li>
+              <strong>Formateur bénévole</strong>
+              (depuis <time datetime="2022">2022</time>)&nbsp;:
+              cours d'informatique à domicile.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Atouts & Intérêts -->
+        <div class="about__card">
+          <h2>Atouts &amp; Intérêts</h2>
+          <ul class="bullets">
+            <li>Autonomie, communication, curiosité</li>
+            <li>Informatique, culture générale (histoire, géographie, littérature)</li>
+            <li>Sports&nbsp;: natation, voile</li>
+          </ul>
+          <p>
+            <a
+              class="btn btn--ghost"
+              href="https://www.linkedin.com/in/olivier-le-seac-h-201aa5139/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Voir le profil LinkedIn d'Olivier Le SEAC'H (nouvelle fenêtre)"
+            >
+              Voir mon LinkedIn
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </section>
 
   </main>
-  <footer id="site-footer" class="fade-in"></footer>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/footer.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
-
