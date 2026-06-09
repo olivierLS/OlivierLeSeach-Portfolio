@@ -3,10 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio — Olivier Le SEAC'H</title>
-  <meta name="description" content="Portfolio d'Olivier Le SEAC'H, étudiant BTS SIO — Projets, CV et contact.">
+  <title>Accueil — Portfolio Olivier Le SEAC'H</title>
+  <meta name="description" content="Portfolio d'Olivier Le SEAC'H, étudiant BTS SIO. Technicien systèmes et réseaux, découvrez mes compétences, projets et solutions numériques.">
+  
+  <meta property="og:title" content="Portfolio — Olivier Le SEAC'H">
+  <meta property="og:description" content="Étudiant BTS SIO — systèmes & réseaux, déploiement de postes, solutions numériques.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/img/Logo.ico" type="image/x-icon">
+
+  <script src="assets/js/navbar.js" defer></script>
+  <script src="assets/js/footer.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </head>
 <body>
 
@@ -14,7 +23,6 @@
 
   <main class="container fade-in" id="main-content">
 
-    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-titre">
       <div class="hero__text">
         <h1 class="hero__title" id="hero-titre">Olivier Le SEAC'H</h1>
@@ -28,7 +36,7 @@
       </div>
 
       <aside class="hero__shape hero__highlight" aria-labelledby="highlight-titre">
-        <p class="hero__highlight-kicker">Profil</p>
+        <p class="hero__highlight-kicker">Profil technique</p>
         <h2 class="hero__highlight-title" id="highlight-titre">Un technicien SI orienté terrain</h2>
         <p class="hero__highlight-text">
           Étudiant en BTS SIO (SISR), j'aborde les environnements IT de façon concrète&nbsp;:
@@ -40,7 +48,6 @@
       </aside>
     </section>
 
-    <!-- Compétences clés -->
     <section class="home-highlights" aria-labelledby="titre-competences">
       <h2 class="section-title" id="titre-competences">Compétences clés</h2>
       <ul class="tags" aria-label="Liste des compétences clés">
@@ -53,25 +60,20 @@
       </ul>
     </section>
 
-    <!-- Projets récents -->
     <section class="home-projects" aria-labelledby="titre-projets">
       <h2 class="section-title" id="titre-projets">Projets récents</h2>
       <div class="cards">
 
         <article class="card" aria-labelledby="card-titre-offitouch">
-          <div
-            class="card__img ph"
-            role="img"
-            aria-label="Illustration du projet OffiTouch"
-          ></div>
+          <div class="card__img ph" role="img" aria-label="Illustration du projet OffiTouch"></div>
           <div class="card__body">
             <h3 class="card__title" id="card-titre-offitouch">OffiTouch — Pharmagest</h3>
             <p class="card__desc">
               Système interactif de vitrine connectée, synchronisé avec LGPI,
               pour moderniser l'expérience client en officine.
             </p>
-            <a href="projets.html#offitouch" class="card__link" aria-label="Voir le projet OffiTouch">
-              Voir le projet
+            <a href="projets.html#offitouch" class="card__link" aria-label="Voir les détails du projet OffiTouch">
+              Voir le projet <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </article>
@@ -84,13 +86,13 @@
             style="background-image: url('assets/img/dsden-reservation.png'); background-size: cover; background-position: center;"
           ></div>
           <div class="card__body">
-            <h3 class="card__title" id="card-titre-dsden">Standardisation des postes — DSDEN 56</h3>
+            <h3 class="card__title" id="card-titre-dsden">Standardisation — DSDEN 56</h3>
             <p class="card__desc">
               Déploiement automatisé et sécurisé de postes via MDT &amp; WAPT.
               Gains de temps et homogénéité du parc informatique.
             </p>
-            <a href="projets.html#dsden" class="card__link" aria-label="Voir le projet DSDEN 56">
-              Voir le projet
+            <a href="projets.html#dsden" class="card__link" aria-label="Voir les détails du projet DSDEN 56">
+              Voir le projet <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </article>
@@ -102,8 +104,5 @@
 
   <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
 
-  <script src="assets/js/navbar.js"></script>
-  <script src="assets/js/footer.js"></script>
-  <script src="assets/js/app.js"></script>
 </body>
 </html>
