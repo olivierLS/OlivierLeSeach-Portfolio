@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Accueil — Portfolio Olivier Le SEAC'H</title>
   <meta name="description" content="Portfolio d'Olivier Le SEAC'H, étudiant BTS SIO. Technicien systèmes et réseaux, découvrez mes compétences, projets et solutions numériques.">
-  
+
   <meta property="og:title" content="Portfolio — Olivier Le SEAC'H">
   <meta property="og:description" content="Étudiant BTS SIO — systèmes & réseaux, déploiement de postes, solutions numériques.">
   <meta property="og:type" content="website">
@@ -16,29 +16,352 @@
   <script src="assets/js/navbar.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
   <script src="assets/js/app.js" defer></script>
+
+  <style>
+    /* ─── Styles spécifiques à la page d'accueil ─── */
+
+    /* Halo d'ambiance global — discret, positionné en haut à droite */
+    .bg-shape-glow {
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(47,109,252,.07) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HERO enrichi ── */
+    .hero {
+      padding-top: 64px;
+      padding-bottom: 56px;
+    }
+
+    .hero__greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: .9;
+    }
+
+    .hero__greeting::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .hero__title {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+      margin: 0 0 18px;
+      color: var(--text);
+    }
+
+    /* Le nom de famille en accent */
+    .hero__title .name-accent {
+      color: var(--accent);
+      display: inline-block;
+      position: relative;
+    }
+
+    /* Soulignement décoratif sous le nom */
+    .hero__title .name-accent::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+      border-radius: 3px;
+    }
+
+    .hero__subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 46ch;
+      line-height: 1.75;
+      margin: 0 0 32px;
+    }
+
+    .hero__subtitle strong {
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    /* ── Encart highlight hero ── */
+    .hero__highlight {
+      background: linear-gradient(145deg, #2055e0 0%, var(--accent) 55%, #4f8aff 100%);
+      border: none;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      color: #fff;
+      box-shadow: var(--shadow-accent-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      height: auto;
+      min-height: 200px;
+    }
+
+    /* Motif de points en arrière-plan de l'encart */
+    .hero__highlight::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 18px 18px;
+      pointer-events: none;
+    }
+
+    /* Cercle décoratif en bas à droite */
+    .hero__highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      pointer-events: none;
+    }
+
+    .hero__highlight > * { position: relative; z-index: 1; }
+
+    .hero__highlight-icon {
+      margin-bottom: 12px;
+      opacity: .85;
+    }
+
+    .hero__highlight-kicker {
+      margin: 0 0 4px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+
+    .hero__highlight-title {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: #fff;
+    }
+
+    .hero__highlight-text {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,.82);
+    }
+
+    .hero__highlight-text + .hero__highlight-text {
+      margin-top: 10px;
+    }
+
+    .hero__highlight-text strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ── Section header (titre + lien) ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-header .section-title { margin: 0; }
+
+    .section-link {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--duration) ease;
+    }
+
+    .section-link:hover { gap: 8px; }
+
+    /* ── Compétences clés ── */
+    .home-highlights {
+      margin-top: 48px;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .tags--large .tag-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      font-size: .88rem;
+    }
+
+    /* Icônes SVG dans les tags de compétences */
+    .tag-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--accent);
+      opacity: .8;
+    }
+
+    /* ── Projets ── */
+    .home-projects {
+      margin-top: 48px;
+    }
+
+    /* Tags dans les cartes */
+    .card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+    }
+
+    .card__tags li {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid var(--accent-mid);
+    }
+
+    /* ── Stats / chiffres clés ── */
+    .home-stats {
+      margin-top: 48px;
+    }
+
+    /* ── CTA de fin de page ── */
+    .home-cta {
+      margin-top: 52px;
+      padding: 36px 32px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--surface-raised) 100%);
+      border: 1px solid var(--accent-mid);
+      border-radius: var(--radius);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-cta::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .home-cta > * { position: relative; z-index: 1; }
+
+    .home-cta__title {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 0 0 8px;
+    }
+
+    .home-cta__desc {
+      color: var(--muted);
+      margin: 0 0 24px;
+      font-size: .95rem;
+      max-width: 44ch;
+      margin-inline: auto;
+    }
+
+    .home-cta .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive page ── */
+    @media (max-width: 920px) {
+      .hero { padding-top: 40px; padding-bottom: 36px; }
+      .home-highlights { padding: 20px; }
+      .home-cta { padding: 28px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .home-cta .btn-group { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Élément décoratif en arrière-plan (Optionnel, ajoute de la profondeur) -->
+  <!-- Halo d'ambiance (signature graphique) -->
   <div class="bg-shape-glow" aria-hidden="true"></div>
 
   <header id="site-header" role="banner"></header>
 
-  <main class="container fade-in" id="main-content">
+  <main class="container" id="main-content">
 
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-titre">
+    <!-- ═══════════════════════════════════════
+         HERO
+    ════════════════════════════════════════ -->
+    <section class="hero fade-in" aria-labelledby="hero-titre">
+
+      <!-- Colonne texte -->
       <div class="hero__text">
         <p class="hero__greeting">Bonjour, je suis</p>
-        <h1 class="hero__title" id="hero-titre">Olivier Le SEAC'H</h1>
+
+        <h1 class="hero__title" id="hero-titre">
+          Olivier<br>
+          <span class="name-accent">Le&nbsp;SEAC'H</span>
+        </h1>
+
         <p class="hero__subtitle">
-          Étudiant en <strong>BTS SIO</strong>, passionné par l'administration de systèmes &amp; réseaux, le déploiement automatisé et les solutions IT fiables.
+          Étudiant en <strong>BTS SIO</strong>, passionné par l'administration
+          de systèmes &amp;&nbsp;réseaux, le déploiement automatisé et les
+          solutions IT fiables.
         </p>
+
         <div class="hero__cta">
           <a class="btn" href="projets.html">
             Découvrir mes projets
-            <!-- Icône Flèche SVG -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </a>
           <a class="btn btn--ghost" href="contact.html">
             Me contacter
@@ -46,90 +369,244 @@
         </div>
       </div>
 
-      <aside class="hero__shape hero__highlight" aria-labelledby="highlight-titre">
-        <!-- Icône décorative dans l'encart -->
-        <svg class="hero__highlight-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        
+      <!-- Encart highlight -->
+      <aside class="hero__shape hero__highlight"
+             aria-labelledby="highlight-titre">
+
+        <svg class="hero__highlight-icon" width="32" height="32"
+             viewBox="0 0 24 24" fill="none"
+             stroke="rgba(255,255,255,0.8)" stroke-width="1.5"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+
         <p class="hero__highlight-kicker">Vision technique</p>
-        <h2 class="hero__highlight-title" id="highlight-titre">L'IT orienté terrain</h2>
+        <h2 class="hero__highlight-title" id="highlight-titre">
+          L'IT orienté terrain
+        </h2>
         <p class="hero__highlight-text">
           J'aborde les environnements informatiques de façon concrète&nbsp;:
           déploiement de postes, administration réseaux et support réactif.
         </p>
-        <p class="hero__highlight-text" style="margin-top: 8px;">
-          <strong>Mon objectif&nbsp;:</strong> des solutions sécurisées, documentées et faciles à maintenir.
+        <p class="hero__highlight-text">
+          <strong>Mon objectif&nbsp;:</strong> des solutions sécurisées,
+          documentées et faciles à maintenir.
         </p>
       </aside>
     </section>
 
-    <!-- Compétences clés -->
-    <section class="home-highlights" aria-labelledby="titre-competences">
+    <!-- ═══════════════════════════════════════
+         COMPÉTENCES CLÉS
+    ════════════════════════════════════════ -->
+    <section class="home-highlights fade-in"
+             aria-labelledby="titre-competences">
       <div class="section-header">
         <h2 class="section-title" id="titre-competences">Compétences clés</h2>
-        <a href="apropos.html" class="section-link">Voir mon profil complet &rarr;</a>
+        <a href="apropos.html" class="section-link">
+          Voir mon profil complet
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
+
       <ul class="tags tags--large" aria-label="Liste des compétences clés">
-        <li>Windows Server / Linux</li>
-        <li>Déploiement (MDT, WAPT)</li>
-        <li>Scripting PowerShell</li>
-        <li>Réseaux (VLAN, Routage)</li>
-        <li>Maintenance Matérielle</li>
-        <li>Bases de données (MySQL)</li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+          Windows Server / Linux
+        </li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          Déploiement (MDT, WAPT)
+        </li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+          Scripting PowerShell
+        </li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="2" y="2" width="20" height="8" rx="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+          Réseaux (VLAN, Routage)
+        </li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          Maintenance Matérielle
+        </li>
+        <li class="tag-item">
+          <svg class="tag-icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+          Bases de données (MySQL)
+        </li>
       </ul>
     </section>
 
-    <!-- Projets récents -->
+    <!-- ═══════════════════════════════════════
+         CHIFFRES CLÉS
+    ════════════════════════════════════════ -->
+    <section class="home-stats" aria-label="Chiffres clés">
+      <div class="stat-grid">
+        <div class="stat fade-in">
+          <div class="stat__value">2+</div>
+          <div class="stat__label">Ans de formation</div>
+        </div>
+        <div class="stat fade-in">
+          <div class="stat__value">10+</div>
+          <div class="stat__label">Projets réalisés</div>
+        </div>
+        <div class="stat fade-in">
+          <div class="stat__value">100+</div>
+          <div class="stat__label">Postes déployés</div>
+        </div>
+        <div class="stat fade-in">
+          <div class="stat__value">BTS</div>
+          <div class="stat__label">SIO en cours</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PROJETS RÉCENTS
+    ════════════════════════════════════════ -->
     <section class="home-projects" aria-labelledby="titre-projets">
       <div class="section-header">
         <h2 class="section-title" id="titre-projets">Projets récents</h2>
+        <a href="projets.html" class="section-link">
+          Tous les projets
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
+
       <div class="cards">
 
-        <article class="card" aria-labelledby="card-titre-offitouch">
-          <div class="card__img ph" role="img" aria-label="Illustration du projet OffiTouch"></div>
+        <!-- Carte OffiTouch -->
+        <article class="card fade-in" aria-labelledby="card-titre-offitouch">
+          <div class="card__img ph"
+               role="img"
+               aria-label="Illustration du projet OffiTouch"></div>
           <div class="card__body">
-            <!-- NOUVEAU : Badges technologiques dans la carte -->
             <ul class="card__tags" aria-label="Technologies utilisées">
               <li>Maintenance</li>
               <li>Système interactif</li>
             </ul>
-            
-            <h3 class="card__title" id="card-titre-offitouch">OffiTouch — Pharmagest</h3>
+            <h3 class="card__title" id="card-titre-offitouch">
+              OffiTouch — Pharmagest
+            </h3>
             <p class="card__desc">
-              Installation de systèmes interactifs en vitrine connectée, synchronisés avec LGPI pour moderniser l'expérience client en officine.
+              Installation de systèmes interactifs en vitrine connectée,
+              synchronisés avec LGPI pour moderniser l'expérience client
+              en officine.
             </p>
-            <a href="projets.html#offitouch" class="card__link" aria-label="Voir les détails du projet OffiTouch">
-              Lire l'étude de cas 
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="projets.html#offitouch" class="card__link"
+               aria-label="Voir les détails du projet OffiTouch">
+              Lire l'étude de cas
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.2"
+                   stroke-linecap="round" stroke-linejoin="round"
+                   aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </article>
 
-        <article class="card" aria-labelledby="card-titre-dsden">
-          <div
-            class="card__img"
-            role="img"
-            aria-label="Capture d'écran du projet de standardisation DSDEN 56"
-            style="background-image: url('assets/img/dsden-reservation.png'); background-size: cover; background-position: center;"
-          ></div>
+        <!-- Carte DSDEN -->
+        <article class="card fade-in" aria-labelledby="card-titre-dsden">
+          <div class="card__img"
+               role="img"
+               aria-label="Capture d'écran du projet de standardisation DSDEN 56"
+               style="background-image: url('assets/img/dsden-reservation.png');
+                      background-size: cover;
+                      background-position: center;"></div>
           <div class="card__body">
             <ul class="card__tags" aria-label="Technologies utilisées">
               <li>MDT</li>
               <li>WAPT</li>
               <li>Windows</li>
             </ul>
-
-            <h3 class="card__title" id="card-titre-dsden">Standardisation — DSDEN 56</h3>
+            <h3 class="card__title" id="card-titre-dsden">
+              Standardisation — DSDEN 56
+            </h3>
             <p class="card__desc">
-              Déploiement automatisé et sécurisé de postes informatiques. Gains de temps considérables et homogénéité totale du parc.
+              Déploiement automatisé et sécurisé de postes informatiques.
+              Gains de temps considérables et homogénéité totale du parc.
             </p>
-            <a href="projets.html#dsden" class="card__link" aria-label="Voir les détails du projet DSDEN 56">
-              Lire l'étude de cas 
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="projets.html#dsden" class="card__link"
+               aria-label="Voir les détails du projet DSDEN 56">
+              Lire l'étude de cas
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.2"
+                   stroke-linecap="round" stroke-linejoin="round"
+                   aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA BAS DE PAGE
+    ════════════════════════════════════════ -->
+    <section class="home-cta fade-in" aria-labelledby="cta-titre">
+      <h2 class="home-cta__title" id="cta-titre">
+        Un projet ou une opportunité&nbsp;?
+      </h2>
+      <p class="home-cta__desc">
+        Je suis disponible pour des stages, alternances ou collaborations
+        en environnements systèmes &amp; réseaux.
+      </p>
+      <div class="btn-group">
+        <a class="btn" href="contact.html">
+          Prendre contact
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a class="btn btn--ghost" href="apropos.html">
+          Mon parcours
+        </a>
       </div>
     </section>
 
