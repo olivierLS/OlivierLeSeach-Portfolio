@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Olivier Le SEAC'H</title>
+  <meta name="description" content="Portfolio d'Olivier Le SEAC'H, étudiant BTS SIO option SISR.">
+  <link rel="alternate" hreflang="fr" href="fr/index.html">
+  <link rel="alternate" hreflang="en" href="en/index.html">
+  <link rel="alternate" hreflang="es" href="es/index.html">
+  <link rel="icon" href="assets/img/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var language = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+      var target = 'fr/index.html';
+
+      if (language.indexOf('en') === 0) target = 'en/index.html';
+      if (language.indexOf('es') === 0) target = 'es/index.html';
+
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <main class="container fade-in" id="main-content">
+    <section class="page-section">
+      <div class="about__card">
+        <p class="section-kicker">Portfolio</p>
+        <h1 class="section-title">Olivier Le SEAC'H</h1>
+        <p class="section-lead">Choisissez une langue pour accéder au portfolio.</p>
+        <div class="button-row">
+          <a class="btn" href="fr/index.html">Français</a>
+          <a class="btn btn--ghost" href="en/index.html">English</a>
+          <a class="btn btn--ghost" href="es/index.html">Español</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
