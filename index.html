@@ -19,18 +19,7 @@
 
   <style>
     /* ─── Styles spécifiques à la page d'accueil ─── */
-
-    /* Halo d'ambiance global — discret, positionné en haut à droite */
-    .bg-shape-glow {
-      position: fixed;
-      top: -120px;
-      right: -120px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(47,109,252,.07) 0%, transparent 68%);
-      pointer-events: none;
-      z-index: 0;
-    }
+    /* .bg-shape-glow est désormais défini globalement dans style.css */
 
     /* ── HERO enrichi ── */
     .hero {
@@ -38,27 +27,7 @@
       padding-bottom: 56px;
     }
 
-    .hero__greeting {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 10px;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      opacity: .9;
-    }
-
-    .hero__greeting::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
+    /* .hero__greeting est désormais défini globalement dans style.css */
 
     .hero__title {
       font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -237,27 +206,7 @@
       margin-top: 48px;
     }
 
-    /* Tags dans les cartes */
-    .card__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      list-style: none;
-      padding: 0;
-      margin: 0 0 10px;
-    }
-
-    .card__tags li {
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      background: var(--accent-light);
-      color: var(--accent);
-      border: 1px solid var(--accent-mid);
-    }
+    /* .card__tags est désormais défini globalement dans style.css */
 
     /* ── Stats / chiffres clés ── */
     .home-stats {
