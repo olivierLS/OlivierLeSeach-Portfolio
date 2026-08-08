@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto: servidor de reservas GRR — Olivier Le SEAC'H</title>
+  <meta name="description" content="Caso práctico sobre un servidor interno GRR con WAMP, MySQL, copias de seguridad y control de acceso.">
+  <link rel="alternate" hreflang="fr" href="../../fr/projets/projet-grr.html">
+  <link rel="alternate" hreflang="en" href="../../en/projets/projet-grr.html">
+  <link rel="alternate" hreflang="es" href="projet-grr.html">
+  <meta property="og:title" content="Proyecto: servidor de reservas GRR — Olivier Le SEAC'H">
+  <meta property="og:description" content="Caso práctico sobre un servidor interno GRR con WAMP, MySQL, copias de seguridad y control de acceso.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/img/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/navbar.js" defer></script>
+  <script src="../../assets/js/footer.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
+</head>
+<body>
+  <header id="site-header" role="banner"></header>
+  <main class="container fade-in" id="main-content">
+    <div class="project-back"><a href="bts-sio.html" class="btn btn--ghost">&larr; Volver a proyectos BTS SIO</a></div>
+    <section class="project-hero" aria-labelledby="project-title"><span class="eyebrow">Caso práctico</span><h1 class="section-title" id="project-title">Servidor de reservas GRR</h1><p class="hero__subtitle project-hero__subtitle">Implantación de un servicio interno de reserva de salas y recursos para la DSDEN.</p><ul class="tags" aria-label="Technologies"><li>GRR</li><li>WAMP</li><li>MySQL</li><li>Copias</li><li>RGPD</li></ul></section>
+    <section class="page-section"><div class="cards" style="grid-template-columns: 1fr;"><article class="card project-card"><h2 class="card__title project-card__title">Contexto y objetivos</h2><p>La administración necesitaba una solución interna de reservas que protegiera los datos de los usuarios y siguiera siendo sencilla de usar en la red local.</p></article><article class="card project-card"><h2 class="card__title project-card__title">Soluciones técnicas</h2><div class="project-tech-grid"><div class="project-tech-block"><p>Desplegar GRR en una máquina virtual Windows 11 dedicada.</p></div><div class="project-tech-block"><p>Usar WAMP y MySQL para la aplicación y la base de datos.</p></div><div class="project-tech-block"><p>Restringir el acceso de red y definir una estrategia de copias para la continuidad del servicio.</p></div></div></article><article class="card project-card"><h2 class="card__title project-card__title">Etapas principales</h2><ol class="project-timeline"><li class="project-timeline__item">Preparar la máquina virtual y la pila de servicios.</li><li class="project-timeline__item">Instalar y configurar GRR, WAMP y MySQL.</li><li class="project-timeline__item">Proteger el acceso y limitar los servicios expuestos.</li><li class="project-timeline__item">Validar las reservas con usuarios y equipo informático.</li><li class="project-timeline__item">Documentar mantenimiento y restauración.</li></ol></article><article class="card project-card"><h2 class="card__title project-card__title">Beneficios y resultados</h2><div class="benefits-block"><ul class="benefits-block__list"><li>Gestión centralizada de reservas.</li><li>Mejor control de accesos y puertos expuestos.</li><li>Copias de seguridad para apoyar la continuidad.</li><li>Servicio interno mantenible por el equipo.</li></ul></div></article></div></section>
+  </main>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+</body>
+</html>

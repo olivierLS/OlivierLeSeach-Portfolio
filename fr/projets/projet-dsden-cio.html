@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet : Modernisation Réseau — Portfolio Olivier Le SEAC'H</title>
+  <meta name="description" content="Détail du projet de modernisation, d'optimisation et de restructuration des infrastructures réseau de la DSDEN.">
+  <link rel="alternate" hreflang="fr" href="projet-dsden-cio.html">
+  <link rel="alternate" hreflang="en" href="../../en/projets/projet-dsden-cio.html">
+  <link rel="alternate" hreflang="es" href="../../es/projets/projet-dsden-cio.html">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/Logo.ico" type="image/x-icon">
+
+  <script src="../../assets/js/navbar.js" defer></script>
+  <script src="../../assets/js/footer.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
+
+  <style>
+    /* ── Styles spécifiques à la page projet CIO ── */
+
+    .project-hero {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .project-hero__title {
+      margin-bottom: 16px;
+    }
+
+    .project-hero__subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    /* Cartes de section numérotées */
+    .project-card {
+      margin-bottom: 32px;
+      padding: 40px;
+    }
+
+    .project-card__heading {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-top: 0;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .project-card__heading-number {
+      color: var(--accent);
+    }
+
+    .project-card__subheading {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .project-card__subheading--spaced {
+      margin-bottom: 12px;
+    }
+
+    .project-card__text {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-card__text--spaced {
+      margin-bottom: 24px;
+    }
+
+    .project-card__list {
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-card__list li {
+      margin-bottom: 8px;
+    }
+
+    /* Tableau des technologies */
+    .tech-table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+    }
+
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .tech-table thead tr {
+      background: var(--accent-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tech-table th {
+      padding: 12px 16px;
+      font-weight: 700;
+    }
+
+    .tech-table th:first-child { color: var(--accent); }
+    .tech-table th:nth-child(2) { color: var(--text); }
+    .tech-table th:nth-child(3) { color: var(--text-secondary); }
+
+    .tech-table tbody {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tech-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tech-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .tech-table td {
+      padding: 14px 16px;
+    }
+
+    /* Note de confidentialité */
+    .confidentiality-note {
+      background-color: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: var(--radius-xs);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* Timeline des phases */
+    .project-timeline {
+      position: relative;
+      border-left: 2px solid var(--accent-mid);
+      margin-left: 8px;
+      padding-left: 24px;
+    }
+
+    .project-timeline__item {
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .project-timeline__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-timeline__dot {
+      position: absolute;
+      left: -31px;
+      top: 4px;
+      background: var(--accent);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .project-timeline__title {
+      margin: 0 0 4px 0;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .project-timeline__desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Bloc bénéfices */
+    .benefits-block {
+      background: var(--accent-gradient);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      box-shadow: 0 12px 24px var(--accent-glow);
+    }
+
+    .benefits-block__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .benefits-block__list li {
+      margin-bottom: 12px;
+    }
+
+    .benefits-block__list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .project-card {
+        padding: 24px;
+      }
+
+      .project-card__heading {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" role="banner"></header>
+
+  <main class="container fade-in" id="main-content">
+
+    <!-- NAVIGATION RETOUR -->
+    <div style="margin-bottom: 32px;">
+      <a href="bts-sio.html" class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.9rem;">
+        &larr; Retour aux projets BTS SIO
+      </a>
+    </div>
+
+    <!-- EN-TÊTE DU PROJET -->
+    <section class="project-hero" aria-labelledby="projet-titre">
+      <span class="eyebrow">Étude de cas</span>
+      <h1 class="section-title project-hero__title" id="projet-titre">
+        Modernisation &amp; <span class="accent-word">Restructuration Réseau</span>
+      </h1>
+      <p class="project-hero__subtitle">
+        Optimisation globale, consolidation des infrastructures et sécurisation des flux locaux.
+      </p>
+
+      <ul class="tags" style="justify-content: center; margin-top: 24px;" aria-label="Technologies utilisées">
+        <li>Switching &amp; VLANs</li>
+        <li>802.1Q Trunking</li>
+        <li>DHCP Snooping</li>
+        <li>Spanning-Tree</li>
+        <li>Sécurité Réseau</li>
+      </ul>
+    </section>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="cards" style="grid-template-columns: 1fr;">
+
+      <!-- 01. CONTEXTE & OBJECTIFS -->
+      <article class="card project-card" aria-labelledby="section-contexte">
+        <h2 class="project-card__heading" id="section-contexte">
+          <span class="project-card__heading-number" aria-hidden="true">01.</span>
+          Contexte et Objectifs
+        </h2>
+
+        <h3 class="project-card__subheading">Contexte du projet</h3>
+        <p class="project-card__text">
+          Dans le cadre de l'évolution continue des systèmes d'information et de la recherche constante de performance opérationnelle, une refonte globale des infrastructures réseau locales a été entreprise. Le système existant reposait sur une architecture vieillissante et fragmentée, caractérisée par une multiplication d'équipements d'interconnexion et la persistance de solutions de filtrage ou de serveurs obsolètes qui n'étaient plus en adéquation avec les exigences actuelles de fluidité et de centralisation.
+        </p>
+
+        <h3 class="project-card__subheading project-card__subheading--spaced">Problématiques identifiées</h3>
+        <ul class="project-card__list">
+          <li><strong>Complexité matérielle et maintenance lourde :</strong> La dispersion des services sur un nombre surdimensionné de commutateurs augmentait les risques de pannes matérielles, complexifiait l'administration au quotidien et nuisait à la clarté du brassage physique.</li>
+          <li><strong>Obsolescence technique :</strong> Présence de passerelles ou de postes dédiés aux architectures passées (gestion de flux, proxy obsolètes) devenus des points de rupture uniques ou des freins à l'optimisation des débits.</li>
+          <li><strong>Silos de configuration :</strong> Absence d'harmonisation de la base des réseaux virtuels (VLANs) entre les différents îlots ou étages d'une même entité administrative, limitant la flexibilité et la mobilité des agents.</li>
+        </ul>
+
+        <h3 class="project-card__subheading">Besoins métier et enjeux stratégiques</h3>
+        <p class="project-card__text">
+          L'enjeu principal réside dans la garantie d'une haute disponibilité des services numériques critiques (outils métiers, téléphonie sur IP, solutions de visioconférence et serveurs de stockage partagés). L'infrastructure se doit d'être stable et évolutive pour soutenir la transition numérique des services, tout en optimisant l'occupation de l'espace physique au sein des baies techniques et en rationalisant la consommation énergétique.
+        </p>
+
+        <div style="background: var(--surface-raised); padding: 24px; border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+          <h3 class="project-card__subheading project-card__subheading--spaced" style="margin-top: 0;">Objectifs du projet</h3>
+          <ul class="project-card__list" style="margin-bottom: 0;">
+            <li><strong>Objectif principal :</strong> Simplifier l'architecture réseau en consolidant et en fusionnant les commutateurs physiques sous forme de grappes unifiées (stacks) ou de commutateurs uniques centralisés.</li>
+            <li><strong>Objectif secondaire :</strong> Standardiser le plan de routage et la diffusion des VLANs (Voix, Données, Administration, Visiteurs) afin de sécuriser et d'automatiser l'affectation des droits d'accès.</li>
+            <li style="margin-bottom: 0;"><strong>Objectif de continuité :</strong> Assurer une continuité de service maximale lors des opérations de migration via une planification rigoureuse des phases de coupure.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 02. SOLUTIONS TECHNIQUES -->
+      <article class="card project-card" aria-labelledby="section-solutions">
+        <h2 class="project-card__heading" id="section-solutions">
+          <span class="project-card__heading-number" aria-hidden="true">02.</span>
+          Solutions Techniques Mises en Œuvre
+        </h2>
+
+        <h3 class="project-card__subheading">Architecture générale</h3>
+        <p class="project-card__text project-card__text--spaced">
+          La solution retenue repose sur une architecture centralisée et rationalisée, s'appuyant sur des technologies de commutation de niveau 2 et 3 de dernière génération. Les anciens équipements isolés ont été regroupés au sein d'ensembles logiques homogènes (liaisons inter-switches ou empilage matériel selon la topologie des sites), permettant de réduire le nombre de châssis actifs tout en augmentant la densité de ports disponibles.
+        </p>
+
+        <h3 class="project-card__subheading project-card__subheading--spaced">Technologies et protocoles déployés</h3>
+
+        <div class="tech-table-wrapper">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th scope="col">Technologie / Protocole</th>
+                <th scope="col">Rôle et Fonctionnalité</th>
+                <th scope="col">Bénéfice Sécurité &amp; Performance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Trunking 802.1Q</strong></td>
+                <td>Agrégation et transport de réseaux virtuels multiples sur une liaison.</td>
+                <td>Compartimentation étanche des flux et optimisation des uplinks.</td>
+              </tr>
+              <tr>
+                <td><strong>Spanning-Tree (PortFast)</strong></td>
+                <td>Prévention des boucles et convergence ultra-rapide des ports terminaux.</td>
+                <td>Disponibilité immédiate de la connexion lors du branchement.</td>
+              </tr>
+              <tr>
+                <td><strong>DHCP Snooping</strong></td>
+                <td>Filtrage et sécurisation des messages de configuration d'adresses IP.</td>
+                <td>Protection contre l'introduction de serveurs DHCP illégitimes.</td>
+              </tr>
+              <tr>
+                <td><strong>VLANs Dédiés</strong></td>
+                <td>Segmentation logique par typologie d'usage (Voix, Données, Admin).</td>
+                <td>Isolation stricte des flux sensibles par rapport aux utilisateurs.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="confidentiality-note" role="note">
+          <strong>Note de sécurité et conformité :</strong> Conformément aux règles de confidentialité et à l'obligation de discrétion professionnelle, l'intégralité des détails sensibles (tables d'adressage IP privé, identifiants numériques de VLANs, serveurs de supervision et nomenclatures exactes des interfaces) a été volontairement anonymisée. Cet échantillon présente fidèlement la méthodologie et l'approche d'ingénierie sans compromettre l'intégrité de l'infrastructure de production.
+        </div>
+      </article>
+
+      <!-- 03. GRANDES ÉTAPES -->
+      <article class="card project-card" aria-labelledby="section-etapes">
+        <h2 class="project-card__heading" id="section-etapes">
+          <span class="project-card__heading-number" aria-hidden="true">03.</span>
+          Les Grandes Étapes du Projet
+        </h2>
+        <p class="project-card__text project-card__text--spaced">
+          La restructuration a été menée selon une méthodologie rigoureuse en cinq phases distinctes, assurant la maîtrise complète des risques opérationnels.
+        </p>
+
+        <ol class="project-timeline" aria-label="Phases du projet">
+          <li class="project-timeline__item">
+            <span class="project-timeline__dot" aria-hidden="true"></span>
+            <h4 class="project-timeline__title">Phase 1 : Audit de l'existant et analyse des besoins</h4>
+            <p class="project-timeline__desc">Inventaire complet et consolidé des prises réseau, cartographie des VLANs actifs et analyse des options spécifiques configurées. Identification des dépendances logicielles et matérielles pour préparer le démantèlement des anciens systèmes obsolètes.</p>
+          </li>
+          <li class="project-timeline__item">
+            <span class="project-timeline__dot" aria-hidden="true"></span>
+            <h4 class="project-timeline__title">Phase 2 : Conception et préparation logicielle</h4>
+            <p class="project-timeline__desc">Rédaction et validation en mode console des configurations cibles avant manipulation matérielle. Vérification des pilotes d'administration sur les postes de configuration et préparation des scripts d'intégration sécurisés.</p>
+          </li>
+          <li class="project-timeline__item">
+            <span class="project-timeline__dot" aria-hidden="true"></span>
+            <h4 class="project-timeline__title">Phase 3 : Déploiement physique et reconfiguration (Migration)</h4>
+            <p class="project-timeline__desc">Interventions séquentielles en baie de brassage : déconnexion propre et retrait des équipements excédentaires, mise en place de la nouvelle topologie de commutation, raccordement des liaisons inter-switches (Trunk) et re-brassage structuré de l'ensemble des hôtes.</p>
+          </li>
+          <li class="project-timeline__item">
+            <span class="project-timeline__dot" aria-hidden="true"></span>
+            <h4 class="project-timeline__title">Phase 4 : Tests de connectivité et validation</h4>
+            <p class="project-timeline__desc">Application de cahiers de recette stricts sur chaque équipement raccordé : validation de l'attribution DHCP, tests de routage vers le cœur de réseau/Internet et vérification croisée de l'accessibilité des partages réseau et services d'impression.</p>
+          </li>
+          <li class="project-timeline__item">
+            <span class="project-timeline__dot" aria-hidden="true"></span>
+            <h4 class="project-timeline__title">Phase 5 : Accompagnement au changement et suivi</h4>
+            <p class="project-timeline__desc">Communication préalable auprès des utilisateurs afin d'annoncer les fenêtres d'intervention. Mise en place d'un suivi post-migration pour traiter instantanément les anomalies résiduelles et mise à jour finale des schémas directeurs.</p>
+          </li>
+        </ol>
+      </article>
+
+      <!-- 04. BÉNÉFICES ET RÉSULTATS -->
+      <article class="card project-card" aria-labelledby="section-benefices">
+        <h2 class="project-card__heading" id="section-benefices">
+          <span class="project-card__heading-number" aria-hidden="true">04.</span>
+          Bénéfices et Résultats
+        </h2>
+
+        <div class="benefits-block">
+          <ul class="benefits-block__list">
+            <li><strong>Rationalisation du parc matériel :</strong> Réduction du nombre de commutateurs physiques actifs entraînant une baisse des coûts de maintenance et une meilleure gestion thermique des baies.</li>
+            <li><strong>Performances réseau accrues :</strong> L'harmonisation des VLANs fluidifie le trafic local et réduit drastiquement la latence sur les applications métiers critiques et la visioconférence.</li>
+            <li><strong>Sécurité renforcée :</strong> Cloisonnement strict des flux d'infrastructure par rapport aux flux utilisateurs et invités, complété par l'implémentation de mécanismes anti-intrusions logiques.</li>
+            <li><strong>Confort utilisateur &amp; Stabilité :</strong> Transition transparente pour l'ensemble des agents, assurant un environnement numérique hautement disponible et performant.</li>
+            <li><strong>Perspectives d'évolution :</strong> Une architecture pérenne, prête pour l'intégration de politiques de Qualité de Service (QoS) fines et d'outils de supervision centralisés.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project: OffiTouch Pharmagest - Olivier Le SEAC'H</title>
+  <meta name="description" content="Digital Systems vocational case study: installing and maintaining OffiTouch at Pharmagest for pharmacy environments.">
+  <link rel="alternate" hreflang="fr" href="../../fr/projets/projet-pharmagest-offitouch.html">
+  <link rel="alternate" hreflang="en" href="projet-pharmagest-offitouch.html">
+  <link rel="alternate" hreflang="es" href="../../es/projets/projet-pharmagest-offitouch.html">
+  <meta property="og:title" content="Project: OffiTouch Pharmagest - Olivier Le SEAC'H">
+  <meta property="og:description" content="Case study for a digital pharmacy display solution: display workstation, LGPI, touchscreen, receipt printing and maintenance.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../assets/img/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/navbar.js" defer></script>
+  <script src="../../assets/js/footer.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
+</head>
+<body>
+  <header id="site-header" role="banner"></header>
+
+  <main class="container fade-in" id="main-content">
+    <div class="project-back">
+      <a href="bac-pro-systemes-numeriques.html" class="btn btn--ghost">&larr; Back to the vocational project</a>
+    </div>
+
+    <section class="project-hero" aria-labelledby="project-title">
+      <span class="eyebrow">Case study</span>
+      <h1 class="section-title" id="project-title">OffiTouch - Pharmagest</h1>
+      <p class="hero__subtitle project-hero__subtitle">
+        Preparing and installing a digital pharmacy window solution with a touchscreen display, Windows workstation, LGPI integration and remote maintenance.
+      </p>
+      <ul class="tags" aria-label="Technologies and tools">
+        <li>Digital Systems vocational baccalaureate</li>
+        <li>OffiTouch</li>
+        <li>LGPI</li>
+        <li>Windows 10 Pro</li>
+        <li>MySQL / SQL</li>
+        <li>NEC P553</li>
+        <li>Lenovo ThinkCentre</li>
+        <li>Epson TM-30</li>
+        <li>Remote Desktop</li>
+      </ul>
+    </section>
+
+    <section class="project-showcase project-cover" aria-label="OffiTouch project illustration">
+      <div class="project__media">
+        <img src="../../assets/img/pharmagest-offitouch.png" alt="Illustration of an OffiTouch pharmacy setup with a touchscreen, mini-PC and ticket printer." width="1680" height="936" loading="eager">
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="cards" style="grid-template-columns: 1fr;">
+        <article class="card project-card" aria-labelledby="context-title">
+          <h2 class="card__title project-card__title" id="context-title">Context and goals</h2>
+          <div class="project-context-grid">
+            <div>
+              <h3 class="project-showcase__subtitle">Pharmacy need</h3>
+              <p>
+                OffiTouch is used in pharmacies to run an interactive window or sales-area display. The project required a reliable
+                workstation able to drive the screen, connect with the LGPI environment and remain easy to administer after installation.
+              </p>
+            </div>
+            <div class="project-context-grid__highlight">
+              <h3 class="project-showcase__subtitle">Key goals</h3>
+              <ul class="bullets">
+                <li>Prepare a dedicated Windows workstation that is stable and maintainable.</li>
+                <li>Install the OffiTouch server, manager and display component.</li>
+                <li>Integrate the workflow with LGPI, ticket printing and backups.</li>
+                <li>Enable remote administration without making maintenance fragile.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" aria-labelledby="solutions-title">
+          <h2 class="card__title project-card__title" id="solutions-title">Technical solutions</h2>
+          <div class="project-tech-grid">
+            <div class="project-tech-block">
+              <h3 class="project-showcase__subtitle">Interactive hardware</h3>
+              <p>
+                The display workstation used a Lenovo ThinkCentre mini-PC connected to an NEC MultiSync P553 touchscreen,
+                with portrait orientation, DisplayPort input and touch calibration.
+              </p>
+            </div>
+            <div class="project-tech-block">
+              <h3 class="project-showcase__subtitle">Windows preparation</h3>
+              <p>
+                The workstation was configured with a dedicated local account, automatic sign-in, suitable power settings,
+                Remote Desktop access and a simplified interface to reduce interruptions.
+              </p>
+            </div>
+            <div class="project-tech-block">
+              <h3 class="project-showcase__subtitle">OffiTouch services</h3>
+              <p>
+                The installation included the local server, SQL/MySQL database, manager, display component and backups
+                to the LGPI shared space or to storage selected for the pharmacy.
+              </p>
+            </div>
+            <div class="project-tech-block">
+              <h3 class="project-showcase__subtitle">LGPI and printing</h3>
+              <p>
+                The workflow accounted for the LGPI module/licence, Epson TM-30 printer and barcode ticket generation
+                so the sale could be retrieved at the counter.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" aria-labelledby="steps-title">
+          <h2 class="card__title project-card__title" id="steps-title">Main project stages</h2>
+          <ol class="project-timeline">
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">1. Analyse the requirement</strong><br>
+              <span class="muted project-timeline__desc">Identify the expected pharmacy setup: Screen, Wall or Stand, then check hardware, network and LGPI prerequisites.</span>
+            </li>
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">2. Prepare the display workstation</strong><br>
+              <span class="muted project-timeline__desc">Install and configure Windows 10 Pro, the local account, automatic sign-in, always-on power settings and remote access.</span>
+            </li>
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">3. Install OffiTouch</strong><br>
+              <span class="muted project-timeline__desc">Deploy the local server, manager and display module, then create the automatic startup shortcut.</span>
+            </li>
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">4. Configure operations</strong><br>
+              <span class="muted project-timeline__desc">Set up backups, check LGPI rights, prepare remote administration and document useful access details.</span>
+            </li>
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">5. Set up peripherals</strong><br>
+              <span class="muted project-timeline__desc">Configure the NEC touchscreen in portrait mode, calibrate touch input and install the Epson TM-30 printer when required.</span>
+            </li>
+            <li class="project-timeline__item">
+              <strong class="project-timeline__label">6. Test and hand over</strong><br>
+              <span class="muted project-timeline__desc">Validate the manager, display and LGPI sale retrieval before finalising the maintenance documentation.</span>
+            </li>
+          </ol>
+        </article>
+
+        <article class="card project-card" aria-labelledby="tests-title">
+          <h2 class="card__title project-card__title" id="tests-title">Testing and validation</h2>
+          <div class="project-context-grid">
+            <div>
+              <h3 class="project-showcase__subtitle">Administration side</h3>
+              <p>
+                Connect to the workstation through Remote Desktop, open the OffiTouch manager, import a product by CIP code or name,
+                then save the changes.
+              </p>
+            </div>
+            <div>
+              <h3 class="project-showcase__subtitle">Display and counter side</h3>
+              <p>
+                Run a test sale from the display, print or show the customer code, retrieve the sale in LGPI and complete it at the counter.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card" aria-labelledby="results-title">
+          <h2 class="card__title project-card__title" id="results-title">Benefits and results</h2>
+          <div class="benefits-block">
+            <ul class="benefits-block__list">
+              <li>A more interactive pharmacy window for presenting products and guiding customers.</li>
+              <li>A dedicated workstation prepared to run continuously with fewer interruptions.</li>
+              <li>A smoother workflow between the display, LGPI and the pharmacy counter.</li>
+              <li>Easier maintenance through Remote Desktop, backups and documentation.</li>
+              <li>A useful learning experience in autonomy, technical discipline and professional teamwork.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+</body>
+</html>

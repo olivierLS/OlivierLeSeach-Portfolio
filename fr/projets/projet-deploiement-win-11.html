@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet : Déploiement &amp; Standardisation — Portfolio Olivier Le SEAC'H</title>
+  <meta name="description" content="Détail du projet d'homogénéisation et de déploiement automatisé du parc informatique de la DSDEN 56.">
+  <link rel="alternate" hreflang="fr" href="projet-deploiement-win-11.html">
+  <link rel="alternate" hreflang="en" href="../../en/projets/projet-deploiement-win-11.html">
+  <link rel="alternate" hreflang="es" href="../../es/projets/projet-deploiement-win-11.html">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/Logo.ico" type="image/x-icon">
+
+  <script src="../../assets/js/navbar.js" defer></script>
+  <script src="../../assets/js/footer.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
+
+  <style>
+    /* ── Styles spécifiques à la page projet Déploiement & Standardisation ── */
+
+    .project-hero {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .project-hero__title {
+      margin-bottom: 16px;
+    }
+
+    .project-hero__subtitle {
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    /* Cartes de section */
+    .project-card {
+      padding: 40px;
+    }
+
+    .project-card__title {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+
+    .project-card__title--spaced {
+      margin-bottom: 32px;
+    }
+
+    /* Grille contexte (2 colonnes auto) */
+    .project-context-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .project-context-grid__subheading {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .project-context-grid__highlight {
+      background: var(--surface-raised);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--accent);
+    }
+
+    .project-context-grid__highlight-heading {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    /* Grille blocs techniques (3 colonnes auto) */
+    .project-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .project-tech-block {
+      border: 1px solid var(--border-colored);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+    }
+
+    .project-tech-block__heading {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    /* Timeline des étapes */
+    .project-timeline {
+      padding-left: 20px;
+    }
+
+    .project-timeline__item {
+      margin-bottom: 24px;
+    }
+
+    .project-timeline__item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-timeline__label {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .project-timeline__desc {
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    /* Bloc bénéfices */
+    .benefits-block {
+      background: var(--accent-gradient);
+      padding: 32px;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      box-shadow: 0 12px 24px var(--accent-glow);
+    }
+
+    .benefits-block__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .benefits-block__list li {
+      margin-bottom: 12px;
+    }
+
+    .benefits-block__list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .project-card {
+        padding: 24px;
+      }
+
+      .project-card__title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" role="banner"></header>
+
+  <main class="container fade-in" id="main-content">
+
+    <!-- NAVIGATION RETOUR -->
+    <div style="margin-bottom: 32px;">
+      <a href="bts-sio.html" class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.9rem;">
+        &larr; Retour aux projets BTS SIO
+      </a>
+    </div>
+
+    <!-- EN-TÊTE DU PROJET -->
+    <section class="project-hero" aria-labelledby="projet-titre">
+      <span class="eyebrow">Étude de cas</span>
+      <h1 class="section-title project-hero__title" id="projet-titre">
+        Déploiement &amp; <span class="accent-word">Standardisation</span>
+      </h1>
+      <p class="hero__subtitle project-hero__subtitle">
+        Homogénéisation et sécurisation du parc informatique via l'automatisation des processus pour la DSDEN 56.
+      </p>
+
+      <ul class="tags" style="justify-content: center;" aria-label="Technologies utilisées">
+        <li>MDT / WDS</li>
+        <li>WAPT</li>
+        <li>PowerShell</li>
+        <li>Clonezilla</li>
+        <li>Support Utilisateur</li>
+      </ul>
+    </section>
+
+    <!-- CONTENU PRINCIPAL -->
+    <div class="cards" style="grid-template-columns: 1fr;">
+
+      <!-- CONTEXTE & OBJECTIFS -->
+      <article class="card project-card" style="margin-bottom: 32px;" aria-labelledby="section-contexte">
+        <h2 class="card__title project-card__title" id="section-contexte">Contexte et Objectifs</h2>
+
+        <div class="project-context-grid">
+          <div>
+            <h3 class="project-context-grid__subheading">Besoins Métiers</h3>
+            <p class="muted" style="line-height: 1.7;">
+              L'infrastructure informatique faisait face à une forte hétérogénéité des équipements, ce qui engendrait de l'instabilité, des dysfonctionnements récurrents et une baisse de la productivité. Les délais de livraison des postes étaient trop longs, et les utilisateurs manquaient d'autonomie face aux incidents techniques quotidiens, alourdissant la charge du support.
+            </p>
+          </div>
+
+          <div class="project-context-grid__highlight">
+            <h3 class="project-context-grid__highlight-heading">Les Objectifs Clés</h3>
+            <ul class="bullets muted" style="padding-left: 20px; line-height: 1.7;">
+              <li><strong>Renouveler et standardiser</strong> les postes de travail pour fournir des environnements sécurisés et prêts à l'emploi.</li>
+              <li><strong>Réduire les délais</strong> de livraison grâce à l'automatisation des déploiements.</li>
+              <li><strong>Diminuer la charge</strong> du support technique en unifiant l'expérience utilisateur.</li>
+              <li><strong>Créer une documentation</strong> détaillée pour rendre les techniciens autonomes sur le processus.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- SOLUTIONS TECHNIQUES -->
+      <article class="card project-card" style="margin-bottom: 32px;" aria-labelledby="section-solutions">
+        <h2 class="card__title project-card__title" id="section-solutions">Solutions Techniques Mises en Œuvre</h2>
+
+        <div class="project-tech-grid">
+
+          <div class="project-tech-block">
+            <h3 class="project-tech-block__heading">Déploiement Automatisé</h3>
+            <p class="muted" style="font-size: 0.95rem; line-height: 1.6;">
+              Mise en place des solutions WDS et MDT pour l'installation automatisée via le réseau (boot PXE) des systèmes d'exploitation Windows. L'outil WAPT a été utilisé pour automatiser le déploiement du socle applicatif de base sur les différents postes de l'administration.
+            </p>
+          </div>
+
+          <div class="project-tech-block">
+            <h3 class="project-tech-block__heading">Scripts &amp; Migration</h3>
+            <p class="muted" style="font-size: 0.95rem; line-height: 1.6;">
+              Utilisation de scripts PowerShell pour la synchronisation des paramètres machines avec le serveur MDT, la jonction au domaine et les paramétrages utilisateurs. Pour la mise à niveau matérielle, des SSD ont été installés et préparés à l'aide de l'outil de clonage Clonezilla.
+            </p>
+          </div>
+
+          <div class="project-tech-block">
+            <h3 class="project-tech-block__heading">Sécurisation des Postes</h3>
+            <p class="muted" style="font-size: 0.95rem; line-height: 1.6;">
+              Modification des paramètres systèmes pour assurer le lancement automatique et sécurisé du VPN dès le démarrage. Création de comptes locaux sécurisés avec gestion stricte des mots de passe et paramétrage des accès aux ressources partagées.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- GRANDES ÉTAPES -->
+      <article class="card project-card" style="margin-bottom: 32px;" aria-labelledby="section-etapes">
+        <h2 class="card__title project-card__title project-card__title--spaced" id="section-etapes">Les Grandes Étapes du Projet</h2>
+
+        <ol class="project-timeline" aria-label="Phases du projet">
+          <li class="project-timeline__item">
+            <strong class="project-timeline__label">1. Analyse et Préparation</strong><br>
+            <span class="muted project-timeline__desc">Préparation des environnements matériels et logiciels, rédaction de la documentation initiale et élaboration d'un plan d'action avec l'équipe informatique.</span>
+          </li>
+
+          <li class="project-timeline__item">
+            <strong class="project-timeline__label">2. Conception et Paramétrage</strong><br>
+            <span class="muted project-timeline__desc">Mise en place d'une nomenclature stricte pour identifier les postes (code établissement, type de matériel, service) et configuration du serveur de déploiement MDT.</span>
+          </li>
+
+          <li class="project-timeline__item">
+            <strong class="project-timeline__label">3. Tests et Validation</strong><br>
+            <span class="muted project-timeline__desc">Installation et test sur un premier lot de postes pour valider la procédure. Recueil des retours utilisateurs, correction des erreurs réseaux (comme le lancement du VPN) et ajustement des scripts.</span>
+          </li>
+
+          <li class="project-timeline__item">
+            <strong class="project-timeline__label">4. Déploiement Massif</strong><br>
+            <span class="muted project-timeline__desc">Déploiement à grande échelle (plusieurs dizaines de postes) dans les différents services, incluant le service d'examen et les infirmières. Transfert minutieux des données (profils utilisateurs, données d'applications) des anciens postes vers les nouveaux.</span>
+          </li>
+
+          <li class="project-timeline__item">
+            <strong class="project-timeline__label">5. Accompagnement et Maintenance</strong><br>
+            <span class="muted project-timeline__desc">Finalisation d'un manuel technique pas-à-pas incluant des captures d'écran, permettant à tout technicien de déployer une machine de la sortie du carton jusqu'à sa livraison à l'utilisateur.</span>
+          </li>
+        </ol>
+      </article>
+
+      <!-- BÉNÉFICES ET RÉSULTATS -->
+      <article class="card project-card" aria-labelledby="section-benefices">
+        <h2 class="card__title project-card__title" id="section-benefices">Bénéfices et Résultats</h2>
+
+        <div class="benefits-block">
+          <ul class="benefits-block__list">
+            <li><strong>Stabilité renforcée :</strong> Les utilisateurs bénéficient désormais d'une expérience numérique unifiée, fluide et sécurisée.</li>
+            <li><strong>Gains de productivité :</strong> La réduction drastique des problèmes liés à l'hétérogénéité matérielle a permis de diminuer la charge de travail du support technique.</li>
+            <li><strong>Déploiement accéléré :</strong> L'automatisation complète via MDT et WAPT permet de configurer les postes de manière homogène et dans des délais très courts.</li>
+            <li><strong>Autonomie technique :</strong> La mise en place de procédures claires et documentées assure l'autonomie des techniciens pour les déploiements futurs.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer id="site-footer" class="fade-in" role="contentinfo"></footer>
+
+</body>
+</html>
